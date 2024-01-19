@@ -9,7 +9,7 @@ const public_users = express.Router();
 //Register a new user
 public_users.post("/register", (req,res) => {
   const {username, password} = req.body;
-  if(!username || !password) {
+  if(!username ||!password) {
     return res.status(400).json({message: "Username and password are required"});
   }
   const existingUser = users.find(user => user.username === username);
@@ -29,7 +29,7 @@ public_users.get('/',function (req, res) {
 // Get book details based on ISBN
 public_users.get('/isbn/:isbn', function (req, res) {
   const isbn = parseInt(req.params.isbn);
-  res.send(books[isbn]);
+  let book = Object.values(books).find(b => b.isbn === isbn);
 
   if (book) {
     return res.status(200).json(book);
