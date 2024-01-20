@@ -3,7 +3,7 @@ let books = {
     isbn: 1,
     author: "Chinua Achebe",
     title: "Things Fall Apart",
-    reviews: {review1: "good book"},
+    reviews: {review1: ""},
   },
   2: {
     isbn: 2,

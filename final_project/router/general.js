@@ -38,7 +38,7 @@ public_users.get('/', async function (req, res) {
 public_users.get('/isbn/:isbn', async function (req, res) {
   const isbn = parseInt(req.params.isbn);
   try {
-    const response = await axios.get('http://localhost:5000/isbn/' + isbn);
+    const response = await axios.get('http://localhost:5000/isbn/:isbn');
     const book = response.data;
 
     if (book) {
