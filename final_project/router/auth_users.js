@@ -45,14 +45,11 @@ if (!isValid(username)) {
 if (authenticatedUser(username,password)) {
   const token = jwt.sign({username}, 'your-secret-key', {expiresIn: 60 * 60});
   req.session.username = username;
-  
+
   return res.status(200).json({message: "Logged in successfully", token});
 } else {
   return res.status(401).json({message: "Invalid username or password"});
 }});
-
-
-
 
 // Add a book review
 regd_users.put("/auth/review/:isbn", (req, res) => {
